@@ -206,7 +206,7 @@ BOOL CTHXReadUtil::LoadDataFile(LPCWSTR lpcwszFile)
 		}else if( m_dwFileVer >= VER_TH10 ){
 			int ofs = 0;
 			while(pbPos[3 + ofs]) ofs += 4;
-			char* pName = strdup(( const char *)pbPos);
+			char* pName = _strdup(( const char *)pbPos);
 			pItem->name    = pName;
 			free(pName);
 			pItem->offset  = *(unsigned long*)&pbPos[4 + ofs];
@@ -214,7 +214,7 @@ BOOL CTHXReadUtil::LoadDataFile(LPCWSTR lpcwszFile)
 			pbPos += 16 + ofs;
 		}else{
 			int ofs = 0;
-			char* pName = strdup(( const char *)pbPos);
+			char* pName = _strdup((const char *)pbPos);
 			pItem->name    = pName;
 			free(pName);
 			ofs = (int)pItem->name.length() + 1;
@@ -289,7 +289,7 @@ BOOL CTHXReadUtil::LoadBgmData(vector<CTHXReadUtil::BGM_LIST>* pBgmList)
 		BYTE* pbOutBuff=NULL;
 		for( int i=1; i<=17; i++ ){
 			char szBuff[32]="";
-			sprintf(szBuff,"th06_%02d.pos",i);
+			sprintf_s(szBuff,"th06_%02d.pos",i);
 
 			itr = FileMap.find(szBuff);
 			if( itr == FileMap.end() ){
@@ -615,7 +615,7 @@ BOOL CTHXReadUtil::LoadFmt(BYTE* pbBuff, DWORD dwSize, vector<CTHXReadUtil::BGM_
 	DWORD dwRead= 0;
 	while(dwRead<dwSize){
 		BGM_LIST Item;
-		char* pName = strdup(( const char *)pbBuff+dwRead);
+		char* pName = _strdup((const char *)pbBuff + dwRead);
 		Item.strFileName = pName;
 		free(pName);
 		if( Item.strFileName.empty() == true ){
@@ -652,7 +652,7 @@ BOOL CTHXReadUtil::LoadPos(BYTE* pbBuff, DWORD dwSize, int iIndex, vector<CTHXRe
 	}
 
 	char szBuff[32]="";
-	sprintf(szBuff,"th06_%02d.wav",iIndex);
+	sprintf_s(szBuff, "th06_%02d.wav", iIndex);
 
 	BGM_LIST Item;
 	Item.strFileName = szBuff;
