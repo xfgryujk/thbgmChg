@@ -57,6 +57,9 @@ BOOL CthbgmChg2App::InitInstance()
 	// TODO: 会社名または組織名などの適切な文字列に
 	// この文字列を変更してください。
 	SetRegistryKey(_T("アプリケーション ウィザードで生成されたローカル アプリケーション"));
+
+	SetThreadLocale(MAKELCID(MAKELANGID(LANG_JAPANESE, SUBLANG_JAPANESE_JAPAN), SORT_JAPANESE_XJIS));
+
 	CIniDlg IniDlg;
 	if( IniDlg.DoModal() == IDOK ){
 		CthbgmChg2Dlg dlg;

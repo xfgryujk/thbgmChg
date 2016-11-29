@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 擔杮岅 resources
+// 日语(日本) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
-#ifdef _WIN32
 LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 #pragma code_page(932)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -48,8 +46,8 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
     "LANGUAGE 17, 1\r\n"
     "#pragma code_page(932)\r\n"
-    "#include ""res\\thbgmChg2.rc2""  // Microsoft Visual C++ 埲奜偱曇廤偝傟偨儕僜乕僗\r\n"
-    "#include ""afxres.rc""     // 昗弨僐儞億乕僱儞僩\r\n"
+    "#include ""res\\thbgmChg2.rc2""  // Microsoft Visual C++ ???撥????橮?録?\r\n"
+    "#include ""afxres.rc""     // ????壄録???\r\n"
     "#endif\r\n"
     "\0"
 END
@@ -75,7 +73,7 @@ IDD_THBGMCHG2_DIALOG DIALOGEX 0, 0, 319, 281
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "搶曽僔儕乕僘BGM擖傟懼偊僣乕儖"
-FONT 9, "MS UI Gothic", 0, 0, 0x1
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
 BEGIN
     DEFPUSHBUTTON   "廔椆",IDOK,272,7,40,16
     LTEXT           "僨乕僞僼傽僀儖 (thXX.dat)",IDC_STATIC,7,7,67,8
@@ -112,7 +110,7 @@ END
 IDD_DIALOG_INI DIALOGEX 0, 0, 251, 101
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "搶曽僔儕乕僘BGM擖傟懼偊僣乕儖"
-FONT 14, "MS UI Gothic", 700, 0, 0x80
+FONT 14, "Microsoft Sans Serif", 700, 0, 0x0
 BEGIN
     DEFPUSHBUTTON   "摨堄偡傞",IDOK,65,80,50,14
     PUSHBUTTON      "摨堄偟側偄",IDCANCEL,136,80,50,14
@@ -164,7 +162,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_THBGMCHG2_DIALOG, DIALOG
     BEGIN
@@ -173,10 +171,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 274
     END
+
+    IDD_DIALOG_INI, DIALOG
+    BEGIN
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // 擔杮岅 resources
+#endif    // 日语(日本) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -194,8 +196,8 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
 LANGUAGE 17, 1
 #pragma code_page(932)
-#include "res\thbgmChg2.rc2"  // Microsoft Visual C++ 埲奜偱曇廤偝傟偨儕僜乕僗
-#include "afxres.rc"     // 昗弨僐儞億乕僱儞僩
+#include "res\thbgmChg2.rc2"  // Microsoft Visual C++ 以外で編集されたリソース
+#include "afxres.rc"     // 標準コンポーネント
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

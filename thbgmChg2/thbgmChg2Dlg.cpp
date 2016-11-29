@@ -567,6 +567,8 @@ UINT CthbgmChg2Dlg::CreateBgmWaitThread(LPVOID pParam)
 {
 	CthbgmChg2Dlg* pSys = (CthbgmChg2Dlg*)pParam;
 
+	SetThreadLocale(MAKELCID(MAKELANGID(LANG_JAPANESE, SUBLANG_JAPANESE_JAPAN), SORT_JAPANESE_XJIS));
+
 	pSys->m_cProg.SetPos(0);
 
 	if( pSys->m_bKouma == FALSE ){
