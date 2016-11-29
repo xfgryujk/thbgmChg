@@ -31,7 +31,7 @@ public:
 public:
 	typedef struct _BGM_LIST {
 		string strBgmName;
-		string strWaveFile;
+		wstring strWaveFile;
 		UINT uiLoop;
 		UINT uiEnd;
 		UINT uiOffset;

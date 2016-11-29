@@ -985,7 +985,7 @@ BOOL CTHXReadUtil::ChangeFmt(vector<CTHXReadUtil::BGM_LIST>* pBgmList, BYTE* pbB
 	for( int i=0; i<(int)pBgmList->size(); i++ ){
 		if( (*pBgmList)[i].strWaveFile.empty() == true ){
 			dwRead+=16;
-			j = (*pBgmList)[i].uiDefOffset;
+			j = (*pBgmList)[i].uiOffset;
 			memcpy(pbBuff+dwRead, &j, sizeof(int) );
 			dwRead+=4;
 			dwRead+=4;

@@ -323,7 +323,7 @@ void CthbgmChg2Dlg::OnLbnSelchangeListBgm()
 		m_iLastIndex = -1;
 		return ;
 	}
-	CStringA strA="";
+	CString strA;
 	if( m_iLastIndex != -1 ){
 		strA = m_strChgWave;
 		BgmList[m_iLastIndex].strWaveFile = strA.GetBuffer(0);
@@ -412,7 +412,7 @@ void CthbgmChg2Dlg::OnBnClickedButtonCreate()
 
 	int iIndex = m_cListBgm.GetCurSel();
 	if( iIndex != LB_ERR ){
-		CStringA strA="";
+		CString strA;
 		m_iLastIndex = iIndex;
 
 		strA = m_strChgWave;
@@ -524,7 +524,7 @@ BOOL CthbgmChg2Dlg::CheckData()
 {
 	for(int i=0; i<(int)BgmList.size(); i++ ){
 		if( BgmList[i].strWaveFile.empty() != true ){
-			HANDLE hFile = CreateFileA( BgmList[i].strWaveFile.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
+			HANDLE hFile = CreateFile( BgmList[i].strWaveFile.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
 			if( hFile == INVALID_HANDLE_VALUE ){
 				MessageBox(L"wavファイルが見つかりませんでした");
 				return FALSE;
@@ -567,7 +567,7 @@ UINT CthbgmChg2Dlg::CreateBgmWaitThread(LPVOID pParam)
 {
 	CthbgmChg2Dlg* pSys = (CthbgmChg2Dlg*)pParam;
 
-	SetThreadLocale(MAKELCID(MAKELANGID(LANG_JAPANESE, SUBLANG_JAPANESE_JAPAN), SORT_JAPANESE_XJIS));
+	//SetThreadLocale(MAKELCID(MAKELANGID(LANG_JAPANESE, SUBLANG_JAPANESE_JAPAN), SORT_JAPANESE_XJIS));
 
 	pSys->m_cProg.SetPos(0);
 
@@ -631,7 +631,7 @@ UINT CthbgmChg2Dlg::CreateBgmWaitThread(LPVOID pParam)
 				dwOffset += pSys->BgmList[i].uiDefEnd;
 			}else{
 				pSys->BgmList[i].uiOffset = dwOffset;
-				HANDLE hFile3 = CreateFileA( pSys->BgmList[i].strWaveFile.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
+				HANDLE hFile3 = CreateFile( pSys->BgmList[i].strWaveFile.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL );
 				if( hFile3 == INVALID_HANDLE_VALUE ){
 					pSys->PostMessageW(WM_USER+101);
 					CloseHandle(hFile);
